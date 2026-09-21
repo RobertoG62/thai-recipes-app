@@ -73,6 +73,20 @@
 
         const heroSubtitle = document.querySelector('#hero p');
         if (heroSubtitle) heroSubtitle.textContent = i18n.t('hero.subtitle');
+    
+        // Update empty state
+        const emptyTitle = document.querySelector('#empty-state h3');
+        if (emptyTitle) emptyTitle.textContent = i18n.t('search.noResults');
+
+        const emptyDesc = document.querySelector('#empty-state p');
+        if (emptyDesc) emptyDesc.textContent = i18n.t('search.tryAgain');
+
+        const clearFiltersBtn = document.getElementById('clear-filters-btn');
+        if (clearFiltersBtn) clearFiltersBtn.textContent = i18n.t('search.clearFilters');
+
+        // Update loading state
+        const loadingText = document.querySelector('#loading-state p');
+        if (loadingText) loadingText.textContent = i18n.t('loading');
     }
 
     async function switchLanguage(lang) {

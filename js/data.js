@@ -8,7 +8,7 @@ const RecipeData = (() => {
         recipes: [],
         filteredRecipes: [],
         searchQuery: '',
-        activeCategory: 'הכל',
+        activeCategory: '',
         categories: [],
         isLoaded: false,
     };
@@ -22,9 +22,9 @@ const RecipeData = (() => {
         state.filteredRecipes = [...state.recipes];
 
         // Set categories based on language
-        const allCategory = language === 'he' ? 'הכל' : 'All';
-        state.categories = [allCategory, ...new Set(state.recipes.map(r => r.category))];
-        state.activeCategory = allCategory;
+        const allLabel = i18n.t('categories.all');
+        state.categories = [allLabel, ...new Set(state.recipes.map(r => r.category))];
+        state.activeCategory = allLabel;
         state.isLoaded = true;
         return state;
     }
@@ -37,10 +37,11 @@ const RecipeData = (() => {
 
     function filterRecipes(query, category) {
         state.searchQuery = (query || '').trim();
-        state.activeCategory = category || 'הכל';
+        const allLabel = i18n.t('categories.all');
+        state.activeCategory = category || allLabel;
 
         state.filteredRecipes = state.recipes.filter(recipe => {
-            const matchesCategory = state.activeCategory === 'הכל' || recipe.category === state.activeCategory;
+            const matchesCategory = state.activeCategory === allLabel || recipe.category === state.activeCategory;
             if (!matchesCategory) return false;
             if (!state.searchQuery) return true;
 

@@ -4,7 +4,7 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-    --th-primary: #E63946;
+    --th-primary: #D43440;
     --th-primary-light: #FFB703;
     --th-primary-dark: #A4161A;
     --th-cream: #FAFAFA;
@@ -369,7 +369,7 @@ html[dir="ltr"] .primary-border-right {
     top: -100px;
     inset-inline-start: 1rem;
     z-index: 200;
-    background: #E63946;
+    background: #D43440;
     color: #fff;
     padding: 0.75rem 1.5rem;
     font-weight: 600;
@@ -380,12 +380,12 @@ html[dir="ltr"] .primary-border-right {
 .skip-link:focus { top: 1rem; }
 
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
-    outline: 3px solid #E63946;
+    outline: 3px solid #D43440;
     outline-offset: 3px;
     border-radius: 2px;
 }
 @supports not selector(:focus-visible) {
-    a:focus, button:focus { outline: 3px solid #E63946; outline-offset: 3px; }
+    a:focus, button:focus { outline: 3px solid #D43440; outline-offset: 3px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
